@@ -1,0 +1,65 @@
+<header>
+  <h1>DOM_JS. Считываем информацию из DOM</h1>
+  <p>Практическая работа с HTML и JavaScript</p>
+</header>
+
+<nav>
+  <a href="index.html">Главная</a>
+  <a href="breeds.html">Породы кошек</a>
+  <a href="care.html">Уход</a>
+  <a href="shop.html">Магазин</a>
+  <a href="contact.html">Обратная связь</a>
+  <a href="dom.html" class="active">DOM</a>
+  <a href="latin.html">Латиница</a>
+</nav>
+
+<main>
+  <h2>Учебный макет паспортных страниц</h2>
+
+  <section>
+    <h3>Страница 2. Личные данные</h3>
+
+    <p>Фамилия: <span>Шумейко</span></p>
+    <p>Имя: <span>Алина</span></p>
+    <p>Год рождения: <span>2008</span></p>
+  </section>
+
+  <section>
+    <h3>Страница 3. Дополнительные сведения</h3>
+
+    <p>Место рождения: город Пермь</p>
+    <p>Тип документа: Паспорт</p>
+    <p>Документ не является настоящим паспортом.</p>
+  </section>
+
+  <h2>Результат считывания из DOM</h2>
+
+  <button onclick="readPassport()">Считать данные</button>
+
+  <p id="result">Нажми кнопку для получения данных.</p>
+
+  <h2>Скриншот результата</h2>
+
+  <img
+    src="dom-result.png"
+    alt="Скриншот считывания данных из DOM"
+    width="600"
+  />
+</main>
+
+<footer>
+  <p>Учебный проект по HTML</p>
+</footer>
+
+<script>
+  function readPassport() {
+    const paragraphs = document.getElementsByTagName("p");
+
+    const surname = paragraphs[2].childNodes[1].innerText;
+    const name = paragraphs[3].childNodes[1].innerText;
+    const year = paragraphs[4].childNodes[1].innerText;
+
+    document.getElementById("result").innerText =
+      "Фамилия: " + surname + "; Имя: " + name + "; Год рождения: " + year;
+  }
+</script>

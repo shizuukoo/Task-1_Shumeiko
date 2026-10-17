@@ -1,0 +1,100 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f2f6fc;
+    color: #222;
+  }
+
+  h1 {
+    color: #315b91;
+  }
+
+  .container {
+    background-color: white;
+    padding: 25px;
+    max-width: 600px;
+    border-radius: 10px;
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
+  }
+
+  input {
+    padding: 8px;
+    margin-top: 5px;
+    width: 200px;
+    font-size: 16px;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #315b91;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #result {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+</style>
+<div class="container">
+  <h1>Решение алгоритмической задачи</h1>
+
+  <h3>Условие задачи</h3>
+
+  <p>
+    Даны вещественные числа A, B, C. Определить, выполняются ли неравенства A
+    &lt; B &lt; C или A &lt; B &gt; C и какое именно неравенство выполняется.
+  </p>
+
+  <h3>Введите исходные данные</h3>
+
+  <label for="a">Число A:</label>
+  <input type="number" id="a" step="any" placeholder="Введите A" />
+
+  <label for="b">Число B:</label>
+  <input type="number" id="b" step="any" placeholder="Введите B" />
+
+  <label for="c">Число C:</label>
+  <input type="number" id="c" step="any" placeholder="Введите C" />
+
+  <br />
+
+  <button onclick="solve()">Решить задачу</button>
+
+  <p id="result">Результат решения задачи появится здесь.</p>
+</div>
+
+<script>
+  function solve() {
+    let A = document.getElementById("a").value;
+    let B = document.getElementById("b").value;
+    let C = document.getElementById("c").value;
+
+    let result = document.getElementById("result");
+
+    if (A === "" || B === "" || C === "") {
+      result.textContent = "Введите все три числа!";
+      return;
+    }
+
+    A = Number(A);
+    B = Number(B);
+    C = Number(C);
+
+    if (A < B && B < C) {
+      result.textContent = "Выполняется неравенство A < B < C.";
+    } else if (A < B && B > C) {
+      result.textContent = "Выполняется неравенство A < B > C.";
+    } else {
+      result.textContent = "Ни одно из указанных неравенств не выполняется.";
+    }
+  }
+</script>

@@ -1,0 +1,64 @@
+<header>
+  <h1>Изменяем кириллицу на латиницу по клику</h1>
+  <p>Практическая работа по JavaScript</p>
+</header>
+
+<nav>
+  <a href="index.html">Главная</a>
+  <a href="breeds.html">Породы кошек</a>
+  <a href="care.html">Уход</a>
+  <a href="shop.html">Магазин</a>
+  <a href="contact.html">Обратная связь</a>
+  <a href="dom.html">DOM</a>
+  <a href="latin.html" class="active">Латиница</a>
+</nav>
+
+<main>
+  <h2>Учебный макет паспортных страниц</h2>
+
+  <section>
+    <h3>Страница 2. Личные данные</h3>
+
+    <p>Фамилия: <span id="surname">Шумейко</span></p>
+    <p>Имя: <span id="firstName">Алина</span></p>
+    <p>Год рождения: <span id="birthYear">2008</span></p>
+  </section>
+
+  <section>
+    <h3>Страница 3. Дополнительные сведения</h3>
+
+    <p>Место рождения: город Пермь</p>
+    <p>Тип документа: Паспорт</p>
+    <p>Документ не является настоящим паспортом.</p>
+  </section>
+
+  <button type="button" onclick="changeToLatin()">
+    Изменить кириллицу на латиницу
+  </button>
+
+  <p id="result">Нажми кнопку, чтобы изменить данные.</p>
+
+  <button type="button" onclick="restoreCyrillic()">Вернуть кириллицу</button>
+</main>
+
+<footer>
+  <p>Учебный проект по HTML</p>
+</footer>
+
+<script>
+  function changeToLatin() {
+    document.getElementById("surname").innerText = "Shumeiko";
+    document.getElementById("firstName").innerText = "Alina";
+
+    document.getElementById("result").innerText =
+      "Фамилия и имя изменены на латиницу.";
+  }
+
+  function restoreCyrillic() {
+    document.getElementById("surname").innerText = "Шумейко";
+    document.getElementById("firstName").innerText = "Алина";
+
+    document.getElementById("result").innerText =
+      "Фамилия и имя возвращены на кириллицу.";
+  }
+</script>

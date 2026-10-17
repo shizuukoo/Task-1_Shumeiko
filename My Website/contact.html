@@ -1,0 +1,102 @@
+<header>
+  <h1>Обратная связь</h1>
+  <p>Свяжитесь с автором сайта «Мир кошек»</p>
+</header>
+
+<nav>
+  <a href="index.html">Главная</a>
+  <a href="breeds.html">Породы кошек</a>
+  <a href="care.html">Уход</a>
+  <a href="shop.html">Магазин</a>
+  <a href="contact.html" class="active">Обратная связь</a>
+  <a href="dom.html">DOM</a>
+  <a href="latin.html">Латиница</a>
+</nav>
+
+<main>
+  <h2>Форма контактных данных</h2>
+
+  <form action="https://httpbin.org/post" method="post">
+    <input type="hidden" name="form_type" value="contact" />
+
+    <p>
+      <label for="surname">Фамилия:</label><br />
+      <input
+        type="text"
+        id="surname"
+        name="surname"
+        placeholder="Иванова"
+        required
+      />
+    </p>
+
+    <p>
+      <label for="firstname">Имя:</label><br />
+      <input
+        type="text"
+        id="firstname"
+        name="first_name"
+        placeholder="Анна"
+        required
+      />
+    </p>
+
+    <p>
+      <label for="group">Учебная группа:</label><br />
+      <input
+        type="text"
+        id="group"
+        name="student_group"
+        placeholder="Например, ИС-101"
+        required
+      />
+    </p>
+
+    <p>
+      <label for="phone">Мобильный телефон:</label><br />
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="+7 900 000-00-00"
+        required
+      />
+    </p>
+
+    <p>
+      <label for="email">Электронная почта:</label><br />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="example@mail.com"
+        required
+      />
+    </p>
+
+    <p>
+      <label for="send_date">Дата отправки сообщения:</label><br />
+      <input type="date" id="send_date" name="message_date" required />
+    </p>
+
+    <p>
+      <label for="message">Сообщение:</label><br />
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        placeholder="Напишите сообщение..."
+        required
+      ></textarea>
+    </p>
+
+    <button type="submit">Отправить сообщение</button>
+    <button type="reset">Очистить форму</button>
+  </form>
+
+  <p><a href="#top">Вернуться к началу страницы</a></p>
+</main>
+
+<footer>
+  <p>Учебный проект по HTML</p>
+</footer>

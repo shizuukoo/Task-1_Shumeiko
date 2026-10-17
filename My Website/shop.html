@@ -1,0 +1,118 @@
+<header>
+  <h1>Магазин для кошек</h1>
+  <p>Товары для наших пушистых друзей</p>
+</header>
+
+<nav>
+  <a href="index.html">Главная</a>
+  <a href="breeds.html">Породы кошек</a>
+  <a href="care.html">Уход</a>
+  <a href="shop.html" class="active">Магазин</a>
+  <a href="contact.html">Обратная связь</a>
+  <a href="dom.html">DOM</a>
+  <a href="latin.html">Латиница</a>
+</nav>
+
+<main>
+  <h2>Наши товары</h2>
+
+  <ul>
+    <li>Сухой корм</li>
+    <li>Игрушки</li>
+    <li>Миски</li>
+    <li>Лежанки</li>
+  </ul>
+
+  <h2 id="order">Форма заказа</h2>
+
+  <p>Заполни форму, чтобы оформить учебный заказ.</p>
+
+  <form action="https://httpbin.org/post" method="post">
+    <input type="hidden" name="store" value="Мир кошек" />
+
+    <p>
+      <label for="customer">Имя покупателя:</label><br />
+      <input
+        type="text"
+        id="customer"
+        name="customer_name"
+        value="Анна"
+        required
+      />
+    </p>
+
+    <p>
+      <label for="quantity">Количество товаров:</label><br />
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        value="1"
+        min="1"
+        max="20"
+        required
+      />
+    </p>
+
+    <p>Выбери товар:</p>
+
+    <label>
+      <input type="radio" name="product" value="Игрушка" checked />
+      Игрушка </label
+    ><br />
+
+    <label>
+      <input type="radio" name="product" value="Миска" />
+      Миска </label
+    ><br />
+
+    <label>
+      <input type="radio" name="product" value="Лежанка" />
+      Лежанка
+    </label>
+
+    <p>Дополнительные товары:</p>
+
+    <label>
+      <input type="checkbox" name="extras" value="Мячик" />
+      Мячик </label
+    ><br />
+
+    <label>
+      <input type="checkbox" name="extras" value="Когтеточка" />
+      Когтеточка
+    </label>
+
+    <p>
+      <label for="delivery">Дата доставки:</label><br />
+      <input type="date" id="delivery" name="delivery_date" required />
+    </p>
+
+    <p>
+      <label for="password">Пароль заказа:</label><br />
+      <input
+        type="password"
+        id="password"
+        name="order_password"
+        value="cat123"
+        required
+      />
+    </p>
+
+    <p>
+      <label for="comment">Комментарий к заказу:</label><br />
+      <textarea id="comment" name="order_comment" rows="4" cols="35">
+Позвонить перед доставкой</textarea
+      >
+    </p>
+
+    <button type="submit">Отправить заказ</button>
+    <button type="reset">Сбросить форму</button>
+  </form>
+
+  <p><a href="#top">Вернуться к началу страницы</a></p>
+</main>
+
+<footer>
+  <p>Учебный проект по HTML</p>
+</footer>
